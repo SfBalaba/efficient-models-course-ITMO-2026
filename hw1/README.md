@@ -49,7 +49,8 @@ pip install -r requirements.txt          # torch — сборка под CUDA
 python measure.py                        # сетка -> results/measurements.csv, results/env.json
 python measure.py --resume               # досчитать, если прогон прервался
 python calibrate.py                      # фит theta -> results/theta.json
-python plot_measurements.py              # графики -> results/figures/
+python plot_measurements.py              # графики замеров -> results/figures/
+python plot_validation.py                # предсказание vs замер -> results/figures/validation/
 python profile_model.py --S 224 --B 32   # трасса torch.profiler -> results/traces/
 ```
 
@@ -63,7 +64,8 @@ hw1/
 ├── equations.py             # flops(), memory(), latency(), energy()
 ├── measure.py               # замеры
 ├── calibrate.py             # фит theta
-├── plot_measurements.py     # графики
+├── plot_measurements.py     # графики замеров
+├── plot_validation.py       # графики предсказание vs замер
 ├── profile_model.py         # трассы torch.profiler по слоям
 └── results/
     ├── measurements.csv
@@ -71,6 +73,7 @@ hw1/
     ├── theta.json
     ├── traces/
     └── figures/
+        └── validation/      # <m>_vs_batch, <m>_vs_size, <m>_surface, <m>_error_grid, parity
 ```
 
 ## Результаты
@@ -79,4 +82,15 @@ TODO
 
 ## Выводы
 
-TODO
+по картинкам  построенным.     
+latency_vs_batch.png - линейная зависимость latency от batch_size
+Для больших s наблюдаем compute-bound. GPU загружен вычислениями, память успевает подвозить данные. Линейность.
+Для малых s наблюдается memory-bound или launch-bound режим.
+s=32 почти горизонтальна до B=16
+Увеличение батча почти не увеличивает время на overhead запуска ядер доминирует.
+S=64 имеет излом. Сначала рост медленный (memory/launch bound), потом ускоряется.     
+validation (не степень двойки) точки видны как отклонение от линейной зависимости связано с эффективностью ядер gpu, оптимизированы под размер кратный 2.     
+
+масштаб latency с разрезе  маленькие входы \ большие входы подтверждает эффективность в real-time, побеждает throughput. 
+
+
