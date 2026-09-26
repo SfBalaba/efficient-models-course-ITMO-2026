@@ -1,0 +1,32 @@
+{
+  "spec": {
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "cuda_cores": 8960,
+    "boost_clock_hz": 2452000000.0,
+    "mem_bandwidth_Bps": 896000000000.0,
+    "tdp_w": 300.0,
+    "l2_cache_bytes": 50331648,
+    "source": "паспорт NVIDIA (не проверено по сети); L2 и TDP совпадают с torch/nvidia-smi на этой машине"
+  },
+  "measured": {
+    "sm_clock_under_load_hz": 2340000000.0,
+    "power_limit_w": 250.0,
+    "idle_power_w": 45.59,
+    "params_bytes": 4161296,
+    "cublas_workspace_bytes": 9568256,
+    "const_before_forward_bytes": 14188544
+  },
+  "derived": {
+    "peak_fp32_flops_boost": 43939840000000.0,
+    "peak_fp32_flops_at_measured_clock": 41932800000000.0,
+    "ridge_point_flop_per_byte": 46.8
+  },
+  "ideal_theta": {
+    "theta_comp_s_per_flop": 2.3847680097680098e-14,
+    "theta_mem_s_per_byte": 1.1160714285714286e-12,
+    "theta_launch_s": 0.0,
+    "theta_power_w_tdp": 300.0,
+    "theta_power_w_limit": 250.0,
+    "note": "roofline: T = max(FLOPs·theta_comp, Bytes·theta_mem), E = P·T; theta_launch = 0 — в roofline нет накладных расходов"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "ideal": {
+    "theta_comp_s_per_flop": 2.3847680097680098e-14,
+    "theta_mem_s_per_byte": 1.1160714285714286e-12,
+    "theta_launch_s": 0.0,
+    "theta_power_w_tdp": 300.0,
+    "theta_power_w_limit": 250.0,
+    "note": "roofline: T = max(FLOPs·theta_comp, Bytes·theta_mem), E = P·T; theta_launch = 0 — в roofline нет накладных расходов"
+  },
+  "fitted_theta_json": {
+    "latency": {
+      "theta_launch": -0.006252544702176717,
+      "theta_comp": -1.7527413458297476e-11,
+      "theta_mem": 1.5911054558227217e-09
+    },
+    "energy": {
+      "theta_launch": -0.02714184292853017,
+      "theta_power": 248.00577882422948,
+      "latency": {
+        "theta_launch": -0.006252544702176717,
+        "theta_comp": -1.7527413458297476e-11,
+        "theta_mem": 1.5911054558227217e-09
+      }
+    }
+  },
+  "effective_measured": {
+    "theta_comp_s_per_flop": 8.307707828022548e-14,
+    "theta_comp_conv_only_s_per_flop": 6.017462428669295e-14,
+    "theta_mem_s_per_byte": 1.2861952266915332e-12,
+    "theta_launch_s": 0.0002145530000348,
+    "theta_power_w": 248.3238555705558,
+    "theta_power_w_small_inputs": 113.94336693629718
+  },
+  "table": [
+    {
+      "coefficient": "theta_comp, с/FLOP",
+      "ideal": 2.3847680097680098e-14,
+      "fitted_theta_json": -1.7527413458297476e-11,
+      "effective_measured": 8.307707828022548e-14,
+      "verdict_fitted": "знак противоречит физике",
+      "verdict_effective": "отклонение ×3.48"
+    },
+    {
+      "coefficient": "theta_comp (только свёртки), с/FLOP",
+      "ideal": 2.3847680097680098e-14,
+      "fitted_theta_json": null,
+      "effective_measured": 6.017462428669295e-14,
+      "verdict_fitted": "—",
+      "verdict_effective": "отклонение ×2.52"
+    },
+    {
+      "coefficient": "theta_mem, с/байт",
+      "ideal": 1.1160714285714286e-12,
+      "fitted_theta_json": 1.5911054558227217e-09,
+      "effective_measured": 1.2861952266915332e-12,
+      "verdict_fitted": "отклонение ×1.43e+03",
+      "verdict_effective": "согласуется (×1.15)"
+    },
+    {
+      "coefficient": "theta_launch, с",
+      "ideal": 0.0,
+      "fitted_theta_json": -0.006252544702176717,
+      "effective_measured": 0.0002145530000348,
+      "verdict_fitted": "знак противоречит физике",
+      "verdict_effective": "0.215 мс сверх roofline"
+    },
+    {
+      "coefficient": "theta_power, Вт (vs TDP)",
+      "ideal": 300.0,
+      "fitted_theta_json": 248.00577882422948,
+      "effective_measured": 248.3238555705558,
+      "verdict_fitted": "согласуется (×0.83)",
+      "verdict_effective": "согласуется (×0.83)"
+    },
+    {
+      "coefficient": "theta_power, Вт (vs лимит)",
+      "ideal": 250.0,
+      "fitted_theta_json": 248.00577882422948,
+      "effective_measured": 248.3238555705558,
+      "verdict_fitted": "согласуется (×0.99)",
+      "verdict_effective": "согласуется (×0.99)"
+    }
+  ]
+}
