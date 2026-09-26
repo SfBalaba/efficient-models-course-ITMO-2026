@@ -1,0 +1,6 @@
+torch            # CUDA-сборка
+numpy
+pandas
+matplotlib
+scipy
+nvidia-ml-py     # pynvml: счётчик энергии и мощность GPU
