@@ -1,8 +1,6 @@
-import math
-
 def get_kernel_ops_sout(s_in, k, s):
     p = k // 2
-    s_out = math.floor((s_in + 2 * p - k) / s) + 1
+    s_out = (s_in + 2 * p - k) // s + 1
     return s_out
 
 
@@ -75,7 +73,7 @@ def flops(image_size, batch):
     
     flops_relu7, cout, s_out = relu(cin=cout, s_in=s_out)
     
-    flops_linear2, cout = linear(cin=flat, cout=NUM_CLASSES)
+    flops_linear2, cout = linear(cin=cout, cout=NUM_CLASSES)
     
     total_flops = B * (flops_conv7 + flops_relu1 \
                        + flops_max_pool \
@@ -162,11 +160,19 @@ def memory(image_size, batch):
 
 
 
-def latency(image_size, batch, *theta):
-    theta_launch, theta_mem, theta_comp = theta
+def latency(image_size, batch, theta):
+    """
+    theta: {"theta_launch": с, "theta_comp": с/FLOP, "theta_mem": с/байт}
+    """
     f = flops(image_size, batch)
     m = memory(image_size, batch)
-    return theta_launch + theta_comp * f + theta_mem * m
+    return theta["theta_launch"] + theta["theta_comp"] * f + theta["theta_mem"] * m
 
 
-def energy(image_size, batch, theta_energy): ...   # -> float (joules)
+def energy(image_size, batch, theta_energy):
+    """
+    energy:  theta_launch + theta_power * latency(S, B)
+    """
+    t = latency(image_size, batch, theta_energy["latency"])
+    return theta_energy["theta_launch"] + theta_energy["theta_power"] * t
+    
