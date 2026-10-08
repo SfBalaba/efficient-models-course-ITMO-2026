@@ -1,5 +1,5 @@
-
-
+command.txt
+hw2/data_diet/
 __pycache__/
 .ipynb_checkpoints/
 *.ipynb
@@ -231,3 +231,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# hw2 (Data Diet): checkpoints, raw run outputs, experiment tracking, datasets
+*.pt
+*.pth
+hw2/**/exps/
+hw2/data/
+hw2/mlflow.db
+mlruns/
+mlartifacts/
