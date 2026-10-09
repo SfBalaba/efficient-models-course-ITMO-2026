@@ -1,0 +1,3 @@
+[holds] claim 1: half of CIFAR-10 can be pruned by el2n_score without loss: 95.33% vs 95.34% full data (-0.0 sigma)
+[holds] claim 2: el2n_score beats random pruning of the same size significantly at prune fractions [0.2, 0.3, 0.4, 0.5, 0.6, 0.7] (compared: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7])
+[holds] claim 3: sharp degradation at heavy pruning: 3.15 pp lost between 50% and 70% pruned

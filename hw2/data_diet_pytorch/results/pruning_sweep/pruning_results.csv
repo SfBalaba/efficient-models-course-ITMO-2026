@@ -1,0 +1,15 @@
+score_type,prune_fraction,seed_run,kept_examples,keep_fraction,final_test_accuracy,best_test_accuracy,train_minutes,reused_finished_run,run_directory
+el2n_score,0.1,101,45000,0.9,0.95169997215271,0.953499972820282,13.101936796000034,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_10/seed_101
+el2n_score,0.2,101,40000,0.8,0.9542999863624572,0.9546999931335448,13.098498757683169,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_20/seed_101
+el2n_score,0.3,101,35000,0.7,0.9558999538421632,0.9558999538421632,13.10519668675018,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_30/seed_101
+el2n_score,0.4,101,30000,0.6,0.9540999531745912,0.9553999900817872,13.100180132466388,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_40/seed_101
+el2n_score,0.5,101,25000,0.5,0.9532999992370604,0.9538999795913696,13.183870921616714,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_50/seed_101
+el2n_score,0.6,101,20000,0.4,0.9467999935150146,0.9479999542236328,13.10260715028368,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_60/seed_101
+el2n_score,0.7,101,15000,0.3,0.9217999577522278,0.9220999479293824,13.17988151706668,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/el2n_score/prune_70/seed_101
+random,0.1,101,45000,0.9,0.948699951171875,0.9493999481201172,13.093136511233268,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_10/seed_101
+random,0.2,101,40000,0.8,0.9479999542236328,0.9479999542236328,13.099633114100046,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_20/seed_101
+random,0.3,101,35000,0.7,0.9416999816894532,0.9431999921798706,13.10655761914968,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_30/seed_101
+random,0.4,101,30000,0.6,0.9376999735832214,0.9394999742507936,13.103993974499948,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_40/seed_101
+random,0.5,101,25000,0.5,0.9341999888420104,0.9358999729156494,13.114423858866695,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_50/seed_101
+random,0.6,101,20000,0.4,0.9228999614715576,0.9238999485969543,13.098503665166694,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_60/seed_101
+random,0.7,101,15000,0.3,0.914799988269806,0.916700005531311,13.105988206666373,False,/home/sofya/Documents/gitlab/efficent_net/hw2/data_diet_pytorch/exps/pruning/random/prune_70/seed_101
